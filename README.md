@@ -1,15 +1,15 @@
 # GoalMinder :date:
 
 # Table of Contents:
--User Story[user-story]
--Acceptance Criteria[Acceptance-criteria]
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
 
-##User Story:
+## User Story:
 AS A highly time-constrained individual,
 I WANT a unified platform for seamlessly organizing, monitoring and sharing both events and goals
 SO THAT I can enhance my productivity and goal attainment while facilitating collaboration among friends
 
-##Acceptance Criteria:
+## Acceptance Criteria:
 GIVEN an application that accepts user input
 WHEN I visit the website
 THEN I am presented with sign-in and sign-up options
