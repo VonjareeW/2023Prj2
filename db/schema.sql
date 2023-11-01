@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS goal_db;
+
+CREATE DATABASE goal_db;
