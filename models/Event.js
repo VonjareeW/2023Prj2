@@ -6,7 +6,7 @@ const pool = mysql.createPool ({
     password: 'Tommy@613',
   });
 
-  class Event {
+  class Goal {
     constructor(id, title, description) {
       this.id = id;
       this.title = title;
@@ -14,15 +14,14 @@ const pool = mysql.createPool ({
     }
 
     static fetchAll() {
-      return pool.promise()
-      .query('SELECT * FROM event')
-      .then(([rows]) => {
-        return rows.map(row => new Event(row.id, row.title, row.description));
-      })
-      .catch(err => {
-        throw err;
-      });
+        return pool.promise().query('SELECT * FROM goal')
+          .then(([rows]) => {
+            return rows.map(row => new Goal(row.id, row.title, row.description));
+          })
+          .catch(err => {
+            throw err;
+          });
       }
     }
 
-module.exports = Event;
+module.exports = Goal;
