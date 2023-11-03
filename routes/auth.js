@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
 
+
 // Register a new user
+router.get('/register', (req, res) => {
+    res.render('signup');
+});
 router.post('/register', async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -13,7 +17,10 @@ router.post('/register', async (req, res) => {
     }
 });
 
-// Login and generate a JWT
+// Login
+router.get('/login', (req, res) => {
+    res.render('login');
+});
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
