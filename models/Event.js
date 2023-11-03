@@ -15,7 +15,7 @@ const pool = mysql.createPool ({
 
     static fetchAll() {
       return pool.promise()
-      .query('SELECT * FROM events')
+      .query('SELECT * FROM event')
       .then(([rows]) => {
         return rows.map(row => new Event(row.id, row.title, row.description));
       })
@@ -26,15 +26,3 @@ const pool = mysql.createPool ({
     }
 
 module.exports = Event;
-
-//const eventService = require('../services/eventService');
-//router.get('/', (req, res) => {
-  // Handle the logic to fetch and display all events here
-  //Event.fetchAll()
-    //.then(events => {
-      //res.json({ events });
-    //})
-    //.catch(err => {
-      //res.status(500).json({ error: err.message });
-    //});
-//});
