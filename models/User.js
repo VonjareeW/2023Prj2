@@ -1,31 +1,55 @@
-const mysql = require('mysql2');
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
 
-const pool = mysql.createPool ({
-  host: 'localhost',
-  user: 'root',
-  password: 'Tommy@613',
-});
-
-class User {
-  constructor(id, username, email, password) {
-    this.id = id;
-    this.username = username;
-    this.email = email;
-    this.password = password;
-  }
-
-  static findByEmail(email) {
-    return pool.promise().query('SELECT * FROM users WHERE email = ?', [email])
-      .then(([rows]) => {
-        if (rows.length === 0) {
-          return null;
-        }
-        const row = rows[0];
-        return new User(row.id, row.username, row.email, row.password);
-      })
-      .catch(err => {
-        throw err;
-      });
+class User extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
   }
 }
+
+User.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
+    },
+  },
+  {
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
+  }
+);
+
 module.exports = User;
+
