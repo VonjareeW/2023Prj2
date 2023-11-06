@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>GoalMinder Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.5/dayjs.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+    <link rel="stylesheet" href="/homeStyles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/public/index.html">Logout</a>
+        </nav>
+        <h1>Welcome</h1>
+        <div class="qrCode">
+            <img src="/public/assets/HomepageQR.png" height="125" width="125">
+            <div class="qrShare">
+                <h5>Share your GoalMinder!</h5>
+            </div>
+        </div>
+        <div class="quoteSection">
+            <h4></h4>
+        </div>
+    </header>
+
+
+    <!--Listing of events/goals-->
+    <div class="upcomingDatesSection">
+        <div class="eventsList">
+            <h3>Upcoming Events:</h3>
+                <ul class="upcomingEvents">
+                </ul>
+        </div>
+
+        <div class="goalsList">
+            <h3>Upcoming Goals:</h3>
+                <ul class="upcomingGoals">
+                </ul>
+        </div>
+    </div>
+
+
+    <!--adding an event-->
+    <div class="title is-ancestor">
+        <div class="title is-parent is-4">
+            <article class="title is-child box is-extra-small">
+                <div class="addEvent">
+                <h3>Add an event</h3>
+                <div>Name: <input type="text" id="eventName"></div><br>
+                <div>Description: <input type="text" id="eventDescription"></div><br>
+                <div>Select Date: <input type="date" id="eventDate"></div><br>
+                <div>Select Time: <input type="time" id="eventTime"></div><br>
+                <button onclick="saveEvent()">Save Event</button>
+                </div>
+            </article>
+        </div>
+
+
+    <!--adding a goal-->
+    <div class="title is-parent is-4">
+        <article class="title is-child box is-extra-small">
+            <div class="addGoal">
+            <h3>Add a goal</h3>
+            <div>Name: <input type="text" id="goalName"></div><br>
+            <div>Description: <input type="text" id="goalDescription"></div><br>
+            <div>Select Date: <input type="date" id="goalDate"></div><br>
+            <button onclick="saveGoal()">Save Goal</button>
+            </div>
+        </article>
+    </div>
+</div>
+
+
+    <script src="/homeScript.js"></script>
+</body>
+
+<footer>
+    <h5>Created by Daniel Zavala Lopez and Nohemi Moser. <br>All rights reserved. ©2023</h5>
+</footer>
+
+</html>

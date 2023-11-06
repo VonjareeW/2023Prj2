@@ -1,0 +1,53 @@
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e5d8bd;
+    color: #282119;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header .box {
+    font-size: 50px;
+    font-weight: bolder;
+    background-color: #282119 !important;
+    color: #e5d8bd !important;
+    margin: 0;
+    padding: 100px;
+    text-align: center;
+}
+header h1 {
+    padding-bottom: 50px;
+}
+.subtitle,
+.subtitle strong {
+    background-color: #282119 !important;
+    color: #e5d8bd !important;
+    margin: 0;
+    text-align: center;
+}
+
+.logInSignUp.container {
+    padding: 0;
+    margin: 0;
+    background-color: #c97338 !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+.logInSignUp .buttons {
+    padding: 50px;
+    margin: 0;
+    border: none !important;
+    background-color: #c97338 !important;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .logInSignUp .buttons {
+        padding: 50px;
+        margin: 0;
+        border: none !important;
+        background-color: #c97338 !important;
+        width: 100%;
+    }
+}
