@@ -1,0 +1,83 @@
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e5d8bd;
+    color: #282119;
+}
+
+header {
+    background-color: #282119;
+    color: #e5d8bd;
+    padding: 40px;
+    margin: 0;
+}
+.qrCode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.quoteSection {
+    padding-right: 300px;
+    font-style: italic;
+}
+header h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+header h5 {
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+footer {
+    font-size: 12px;
+    padding: 25px;
+    text-align: center;
+}
+
+.upcomingDatesSection {
+    font-weight: bold;
+    list-style-type: none;
+    text-align: center;
+}
+.upcomingEvents,
+.upcomingGoals{
+    font-weight: bold;
+    list-style-type: none;
+    text-align: center;
+}
+
+.eventsList,
+.goalsList {
+    padding: 20px;
+}
+
+.addEvent h3,
+.addGoal h3 {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.addEvent,
+.addEvent .box {
+    color: #e5d8bd;
+    font-size: 15px;
+    padding: 10px;
+    background-color: #c97338 !important;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+.addGoal,
+.addGoal .box {
+    color: #e5d8bd;
+    font-size: 15px;
+    padding: 10px;
+    background-color: #a54d27 !important;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+
+}
+.is-extra-small {
+    padding: 0px;
+    font-size: 12px;
+}
