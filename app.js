@@ -26,16 +26,9 @@ app.use(session(sess));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
 
-app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'register.html'));
-});
 
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-
-app.get('/homepage', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'homepage.html'));
-});
 
 // Body parser middleware
 app.use(express.urlencoded({ extended: false }));
@@ -57,6 +50,8 @@ const goalRoutes = require('./routes/goal');
 app.use('/event', eventRoutes); // Prefix for event routes
 app.use('/goal', goalRoutes);  // Prefix for goal routes
 
+
+/*
 // Database configuration (using mySQL)
 const dbConfig = {
   host: 'localhost',
@@ -73,7 +68,9 @@ connection.connect((err) => {
   }
   console.log('Connected to MySQL as id ' + connection.threadId);
 });
+*/
 
+/*
 //signup
 app.post('/register', async (req, res) => {
   try {
@@ -101,7 +98,9 @@ app.post('/register', async (req, res) => {
   res.status(500).json({ message: 'Server error during registration.' });
 }
 });
+*/
 
+/*
 //login
 app.post('/login', async (req, res) => {
   try {
@@ -134,7 +133,9 @@ app.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+*/
 
+/*
 //logout
 app.post('/logout', (req, res) => {
   req.session.destroy((err) => {
@@ -146,6 +147,7 @@ app.post('/logout', (req, res) => {
       }
   });
 });
+*/
 
 // Start the server
 const PORT = process.env.PORT || 3001;

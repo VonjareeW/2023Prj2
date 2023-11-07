@@ -3,10 +3,23 @@ const router = express.Router();
 const authController = require('../controllers/authController');
 
 
+router.get('/', (req, res) => {
+    console.log(JSON.stringify(req.session));
+    res.render('home');
+});
+
+
+router.get('/dashboard', (req, res) => {
+    console.log(JSON.stringify(req.session));
+    res.render('dashboard');
+});
+
+
 // Register a new user
 router.get('/register', (req, res) => {
     res.render('signup');
 });
+
 router.post('/register', async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -21,6 +34,7 @@ router.post('/register', async (req, res) => {
 router.get('/login', (req, res) => {
     res.render('login');
 });
+
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
